@@ -26,13 +26,17 @@ pairs(~ C + U + I + HS, data = crime)
 fit1 <- lm(C ~ HS + U, data = crime)
 
 summary(fit1)
+## /score -0.5 not specific enough.
 
-## We can easily see that there s multicolinearity across feature variables
+## We can easily see that there's multicolinearity across feature variables
 ## and this changes the estimates. This means that one feature variable 
 ## can be explained by another feature variable. Thus, the estimates are not
 ## wrong, however, my not give valid estimates for the change in the explained variable.
 
 ## d)
+## /score -2
+## The effect of education disappears when accounting for the level
+## of urbanisation!
 
 ## Given our data, this would be true, if reducing state spendings on education
 ## actually results in lower percentage of graduates. But we shall note that the
@@ -44,3 +48,7 @@ summary(fit1)
 fit2 <- lm(C ~ HS + U + I, data = crime)
 
 summary(fit2)
+
+
+## /score -5
+

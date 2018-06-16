@@ -32,7 +32,7 @@ fit <- lm(hours ~ female, data = houseWork)
 summary(fit)
 
 ## e)
-
+## /score -2
 ## The incercept is positive. This shows that if women do not do any housework
 ## the amount of work that men will do will be equal to the average value of working
 ## hours by men per week. In addition to that, Beta1 is negative. Given that, we come
@@ -40,6 +40,7 @@ summary(fit)
 ## decrease the overall average working hours per week.
 
 ## f)
+## Wrong: H0: beta1 <= 0 /score -1
 
 ## We can rewrite the null hypothesis as: H0 beta1 >= 0.
 ## In this case, the alternative hypothesis would be: H1 beta1 < 0.
@@ -50,7 +51,7 @@ summary(fit)
 ## decrease the overall working hours.
 
 ## g)
-
+## Wrong test /score -2
 populationMean <- mean(houseWork$hours)
 
 testStatistic <- sqrt(11016) * (muF - populationMean) / 0.3186
@@ -63,12 +64,12 @@ pt(testStatistic, df = 11016)
 ## if it is true. Thus we can reject the null hypothesis.
 
 ## i)
-
+## ????? /score -2
 ## The test assumes that the population follows a t-distribution, however, our expectations are that the
 ## distribution is normal or normal exponential, because we are estimating time values.
 
 ## j)
-
+## /score -2
 fit1 <- lm(hours ~ female + male, data = houseWork)
 
 summary(fit1)
@@ -77,4 +78,3 @@ summary(fit1)
 ## Y = beta0 + Beta1*X1 + Beta2*X2. But we assume that x2 exists, i.e. that it is TRUE (equals 1)
 ## then by default X2 is FALSE (it is zero) and we cannot state its influence on the average
 ## working hours.
-
